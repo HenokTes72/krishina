@@ -7,7 +7,7 @@ import {
   View,
   ScrollView
 } from 'react-native';
-import { WebBrowser } from 'expo';
+import { WebBrowser, Constants } from 'expo';
 import withResponsive from '../components/withReponsive';
 import MenuButton from '../components/MenuButton';
 import BedButton from '../components/BedButton';
@@ -138,7 +138,7 @@ class HomeScreen extends React.Component {
     console.log("MAX: " + priceRange[1]);
 
     return (
-      <Container>
+      <Container style={{marginTop: (Platform.OS === 'ios') ? 0 : Constants.statusBarHeight}}>
         <Content contentContainerStyle={{ flexGrow: 1 }}>
           <View style={styles.header}>
             <Text style={[{ marginRight: 20, color: '#FFD800' }, styles.headText]}>HOME</Text>
